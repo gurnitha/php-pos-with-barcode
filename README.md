@@ -43,3 +43,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         new file:   ui/inc/head.php
         new file:   ui/inc/navbar.php
         new file:   ui/user.php
+
+
+#### 1.5 Create and connect db
+
+        modified:   README.md
+        new file:   ui/connectdb.php 
