@@ -25,3 +25,8 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         > Tabnine AI Autocomp
         > Highlight Matching Tag
         > Prettier - Code Formatter
+
+
+#### 1.3 Membuat laman dashboard
+
+        new file:   ui/dashboard.php
