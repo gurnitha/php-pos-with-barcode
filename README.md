@@ -12,3 +12,16 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         modified:   .gitignore
         new file:   index.php
+
+
+#### 1.2 Setting up VS Code
+
+        1. Instal extensions:
+
+        > php intelephense
+        > Instal php debug
+        > HTML CSS Support
+        > JavaScript (ES6) code sni
+        > Tabnine AI Autocomp
+        > Highlight Matching Tag
+        > Prettier - Code Formatter
