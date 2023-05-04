@@ -30,3 +30,16 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 #### 1.3 Membuat laman dashboard
 
         new file:   ui/dashboard.php
+
+
+#### 1.4 Restructure file dashboard.php dan create user.php
+
+        modified:   README.md
+        modified:   ui/dashboard.php
+        new file:   ui/inc/aside_control.php
+        new file:   ui/inc/aside_main.php
+        new file:   ui/inc/blank.php
+        new file:   ui/inc/footer.php
+        new file:   ui/inc/head.php
+        new file:   ui/inc/navbar.php
+        new file:   ui/user.php
