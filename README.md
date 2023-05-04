@@ -6,3 +6,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         modified:   .gitignore
         modified:   README.md
+
+
+#### 1.1 Creating login page with assets
+
+        modified:   .gitignore
+        new file:   index.php
