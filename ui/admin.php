@@ -1,4 +1,4 @@
-<!-- ui/admin.php -->
+<!-- ui/user.php -->
 <?php 
     // Connecting the db and start session
     include_once 'connectdb.php';
