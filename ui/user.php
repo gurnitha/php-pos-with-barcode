@@ -1,7 +1,7 @@
 <!-- ui/admin.php -->
 <?php 
     // Connecting the db and start session
-    include_once 'connectdb.php';
+    include_once 'config/connectdb.php';
     session_start();
 
     // Redirect user if useremail is empty

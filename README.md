@@ -127,3 +127,12 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
 
 ## 2. Design Logout Section
+
+
+#### 2.1 Moving the connectdb.php to config folder
+
+        modified:   README.md
+        modified:   index.php
+        modified:   ui/admin.php
+        renamed:    ui/connectdb.php -> ui/config/connectdb.php
+        modified:   ui/user.php
