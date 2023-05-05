@@ -20,7 +20,12 @@
         if(is_array($row)) {
         
             if($row['useremail'] == $useremail and $row['userpassword'] == $password and $row['role'] == "admin") {
-                echo $success="<span style='color:#0FAD83;'>Admin sukses login!</span>";
+
+                // Showing alert messages
+                $_SESSION['status']="Admin sukses login!";
+                $_SESSION['status_code']="success";
+
+                // Redirect to admin dashboard
                 header('refresh: 1;ui/admin.php');
 
                 $_SESSION['userid'] = $row['userid'];
@@ -30,7 +35,12 @@
             } 
 
             elseif ($row['useremail'] == $useremail and $row['userpassword'] == $password and $row['role'] == "user") {
-                echo $success="<span style='color:#0FAD83;'>User sukses login!</span>";
+
+                // Showing alert messages
+                $_SESSION['status']="User sukses login!";
+                $_SESSION['status_code']="success";
+
+                // Redirect to user dashboard
                 header('refresh: 1;ui/user.php');
 
                 $_SESSION['userid'] = $row['userid'];
@@ -41,7 +51,10 @@
         } 
 
         else {
-            echo $success="<span style='color:red;'>Email atau password salah .. ulangi lagi</span>";
+
+            // Showing alert messages
+            $_SESSION['status']="Email atau password salah atau form kosong .. ulangi lagi";
+            $_SESSION['status_code']="error";
         }
         
         // Tesing: useremal:admin@mail.com, userpassword:admin@mail.com
@@ -63,6 +76,10 @@
     <link rel="stylesheet" href="assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="assets/plugins/toastr/toastr.min.css">
 </head>
 <body class="hold-transition login-page">
     <div class="login-box">
@@ -127,7 +144,33 @@
     <script src="assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="assets/plugins/toastr/toastr.min.js"></script>
     <!-- AdminLTE App -->
     <script src="assets/dist/js/adminlte.min.js"></script>
+
+    <!-- Alert messages -->
+    <?php if(isset($_SESSION['status']) && $_SESSION['status'] !=''){ ?>
+
+    <script>
+      $(function() {
+        var Toast = Swal.mixin({
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 5000
+        });
+
+          Toast.fire({
+            icon: '<?php echo $_SESSION['status_code']; ?>',
+            title: '<?php echo $_SESSION['status']; ?>'
+          })
+        });
+
+    </script>
+
+    <?php unset($_SESSION['status']); } ?>
 </body>
 </html>

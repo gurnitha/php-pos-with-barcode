@@ -169,3 +169,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
 
 ## 4. Alert messages
+
+
+#### 4.1 Showing alert messages for login success and error
+
+        modified:   README.md
+        modified:   index.php
