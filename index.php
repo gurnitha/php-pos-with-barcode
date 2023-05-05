@@ -12,8 +12,24 @@
 
         // Test : email= test_email@gmail.com, password=testpassword
         // Hasil: test_email@gmail.com testpassword
+
+        $select = $pdo->prepare("SELECT * FROM tbl_user WHERE useremail='$useremail' AND userpassword='password'");
+        $select->execute();
+        $row = $select->fetch(PDO::FETCH_ASSOC);
+
+        if($row['useremail']==$useremail AND $row['userpassword']==$password){
+
+            echo $success="Login sukses";
+            header('refresh: 1; ui/dashboard.php');
+        }
+
+        else {
+            echo $success="Email atau password salah .. ulangi lagi";
+        }
     }
 
+    // Tesing: useremal:admin@mail.com, userpassword:admin@mail.com
+    // Hasil: Login sukses
 ?>
 
 <!DOCTYPE html>

@@ -56,3 +56,12 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         modified:   README.md
         modified:   index.php
         modified:   ui/connectdb.php
+
+
+#### 1.7 User login - part 2
+
+        modified:   index.php
+        modified:   ui/connectdb.php
+
+        // Tesing: useremal:admin@mail.com, userpassword:admin@mail.com
+        // Hasil: Login sukses
