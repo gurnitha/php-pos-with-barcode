@@ -65,3 +65,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         // Tesing: useremal:admin@mail.com, userpassword:admin@mail.com
         // Hasil: Login sukses
+
+
+#### 1.8 User login - part 3 (multiple users)
+
+        modified:   README.md
+        modified:   index.php

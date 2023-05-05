@@ -8,28 +8,35 @@
         $useremail = $_POST['text_email'];
         $password = $_POST['text_password'];
 
-        echo $useremail. " ".$password;
+        // echo $useremail. " ".$password;
 
         // Test : email= test_email@gmail.com, password=testpassword
         // Hasil: test_email@gmail.com testpassword
 
-        $select = $pdo->prepare("SELECT * FROM tbl_user WHERE useremail='$useremail' AND userpassword='password'");
+        $select = $pdo->prepare("select * from tbl_user where useremail='$useremail' and userpassword='$password'");
         $select->execute();
         $row = $select->fetch(PDO::FETCH_ASSOC);
 
-        if($row['useremail']==$useremail AND $row['userpassword']==$password){
+        if(is_array($row)) {
+        
+            if($row['useremail'] == $useremail and $row['userpassword'] == $password and $row['role'] == "admin") {
+                echo $success="<span style='color:#0FAD83;'>Admin sukses login!</span>";
+                header('refresh: 1;ui/dashboard.php');
+            } 
 
-            echo $success="Login sukses";
-            header('refresh: 1; ui/dashboard.php');
-        }
+            elseif ($row['useremail'] == $useremail and $row['userpassword'] == $password and $row['role'] == "user") {
+                echo $success="<span style='color:#0FAD83;'>User sukses login!</span>";
+                header('refresh: 1;ui/user.php');
+            }
+        } 
 
         else {
-            echo $success="Email atau password salah .. ulangi lagi";
+            echo $success="<span style='color:red;'>Email atau password salah .. ulangi lagi</span>";
         }
+        
+        // Tesing: useremal:admin@mail.com, userpassword:admin@mail.com
+        // Hasil: Login sukses
     }
-
-    // Tesing: useremal:admin@mail.com, userpassword:admin@mail.com
-    // Hasil: Login sukses
 ?>
 
 <!DOCTYPE html>
