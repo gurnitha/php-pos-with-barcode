@@ -175,3 +175,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         modified:   README.md
         modified:   index.php
+
+
+#### 4.2 Showing alert to login form fields
+
+        modified:   README.md
+        modified:   index.php
