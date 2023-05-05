@@ -5,15 +5,30 @@
     session_start();
 
     // --------4 langkah untuk merubah password------------
+
     // Langkah 1 : dapatkan input dari form menggunakan post method
     if(isset($_POST['btnupdate'])){
         $oldpassword_text  = $_POST['txt_oldpassword'];
         $newdpassword_text = $_POST['txt_newpassword'];
         $rnewpassword_text = $_POST['txt_rnewpassword'];
 
-        echo $oldpassword_text." ".$newdpassword_text." ".$rnewpassword_text;
+        // Testing
+        // echo $oldpassword_text." ".$newdpassword_text." ".$rnewpassword_text;
     }
-    // Langkah 2 : ambil data dari db menggunakan select query
+
+    // Langkah 2 : ambil data dari db menggunakan select query berdasarkan useremail
+    $email = $_SESSION['useremail'];
+
+    $select = $pdo->prepare("SELECT * FROM tbl_user WHERE useremail = '$email'");
+    $select->execute();
+    $row = $select->fetch(PDO::FETCH_ASSOC);
+
+    // // Testing: user MUST logged in
+    // echo $row['useremail']; 
+    // // admin@admin.com
+    // echo $row['username'];
+    // // admin
+
     // Langkah 3 : bandingkan data langkah 1 dan langkah 2
     // Langkah 4 : jika kedua data sama, lakukan update query
 ?>

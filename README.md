@@ -207,9 +207,15 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         Ada 4 langkah untuk merubah password
 
         Langkah 1 : dapatkan input dari form menggunakan post method
-        Langkah 2 : ambil data dari db menggunakan select query
+        Langkah 2 : ambil data dari db menggunakan select query berdasarkan useremail
         Langkah 3 : bandingkan data langkah 1 dan langkah 2
         Langkah 4 : jika kedua data sama, lakukan update query
+
+        modified:   README.md
+        modified:   ui/changepassword.php
+
+
+#### 5.3 Langkah 2 : ambil data dari db menggunakan select query berdasarkan useremail
 
         modified:   README.md
         modified:   ui/changepassword.php
