@@ -159,3 +159,10 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         modified:   README.md
         renamed:    ui/logout.php -> ui/Admin name
         modified:   ui/inc/admin/aside_main.php
+
+
+#### 3.2 Showing logged in user as user and added logo
+
+        modified:   README.md
+        modified:   ui/inc/user/aside_main.php
+        renamed:    ui/Admin name -> ui/logout.php
