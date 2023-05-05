@@ -55,7 +55,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="../../ui/logout.php" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Simple Link

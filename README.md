@@ -143,3 +143,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         modified:   README.md
         modified:   ui/inc/admin/aside_main.php
         new file:   ui/logout.php
+
+
+#### 2.3 Logout user
+
+        modified:   README.md
+        modified:   ui/inc/user/aside_main.php
