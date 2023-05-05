@@ -101,3 +101,10 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         modified:   ui/inc/admin/content.php
         modified:   ui/inc/admin/head.php
         modified:   ui/inc/admin/navbar.php
+
+
+#### 1.11 User login - part 6 (Membuat struktur user dashboard)
+
+        modified:   README.md
+        modified:   ui/inc/user/content.php
+        modified:   ui/inc/user/head.php
