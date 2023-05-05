@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require('inc/user/head.php'); ?>
+    <?php require('inc/admin/head.php'); ?>
 </head>
 <body class="hold-transition sidebar-mini">
 
     <!--||||||||||||||||||| navbar |||||||||||||||||||-->
-    <?php require('inc/user/navbar.php'); ?>
+    <?php require('inc/admin/navbar.php'); ?>
     <!--||||||||||||||||||| navbar |||||||||||||||||||-->
 
     <!--||||||||||||||||| aside_main |||||||||||||||||-->
-    <?php require('inc/user/aside_main.php'); ?>
+    <?php require('inc/admin/aside_main.php'); ?>
     <!--||||||||||||||||| aside_main |||||||||||||||||-->
 
     <!--||||||||||||||||||| content |||||||||||||||||||-->
-    <?php require('inc/user/content.php'); ?>
+    <?php require('inc/admin/content.php'); ?>
     <!--||||||||||||||||||| content |||||||||||||||||||-->
 
     <!--||||||||||||||||| aside_control ||||||||||||||-->
-    <?php require('inc/user/aside_control.php'); ?>
+    <?php require('inc/admin/aside_control.php'); ?>
     <!--||||||||||||||||| aside_control ||||||||||||||-->
 
     <!--||||||||||||||||||| footer |||||||||||||||||||-->
-    <?php require('inc/user/footer.php'); ?>
+    <?php require('inc/admin/footer.php'); ?>
 
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->

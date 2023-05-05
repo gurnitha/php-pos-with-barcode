@@ -71,3 +71,24 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         modified:   README.md
         modified:   index.php
+
+
+#### 1.9 User login - part 4 (Memisahkan struktur file admin dan user)
+
+        modified:   README.md
+        modified:   index.php
+        new file:   ui/admin.php
+        deleted:    ui/dashboard.php
+        new file:   ui/inc/admin/aside_control.php
+        renamed:    ui/inc/aside_main.php -> ui/inc/admin/aside_main.php
+        new file:   ui/inc/admin/content.php
+        renamed:    ui/inc/footer.php -> ui/inc/admin/footer.php
+        renamed:    ui/inc/head.php -> ui/inc/admin/head.php
+        renamed:    ui/inc/navbar.php -> ui/inc/admin/navbar.php
+        renamed:    ui/inc/aside_control.php -> ui/inc/user/aside_control.php
+        new file:   ui/inc/user/aside_main.php
+        new file:   ui/inc/user/content.php
+        new file:   ui/inc/user/footer.php
+        new file:   ui/inc/user/head.php
+        new file:   ui/inc/user/navbar.php
+        modified:   ui/user.php

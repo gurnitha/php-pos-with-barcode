@@ -21,7 +21,7 @@
         
             if($row['useremail'] == $useremail and $row['userpassword'] == $password and $row['role'] == "admin") {
                 echo $success="<span style='color:#0FAD83;'>Admin sukses login!</span>";
-                header('refresh: 1;ui/dashboard.php');
+                header('refresh: 1;ui/admin.php');
             } 
 
             elseif ($row['useremail'] == $useremail and $row['userpassword'] == $password and $row['role'] == "user") {
