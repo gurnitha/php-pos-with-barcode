@@ -184,3 +184,17 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
 
 ## 5. Change password
+
+
+#### 5.1 Membuat form page changepassword
+
+        modified:   README.md
+        new file:   ui/blank.php
+        new file:   ui/changepassword.php
+        deleted:    ui/inc/blank.php
+        new file:   ui/inc/others/aside_control.php
+        new file:   ui/inc/others/aside_main.php
+        new file:   ui/inc/others/content.php
+        new file:   ui/inc/others/footer.php
+        new file:   ui/inc/others/head.php
+        new file:   ui/inc/others/navbar.php
