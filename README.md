@@ -181,3 +181,6 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         modified:   README.md
         modified:   index.php
+
+
+## 5. Change password
