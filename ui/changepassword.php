@@ -3,6 +3,19 @@
     // Connecting the db and start session
     include_once 'config/connectdb.php';
     session_start();
+
+    // --------4 langkah untuk merubah password------------
+    // Langkah 1 : dapatkan input dari form menggunakan post method
+    if(isset($_POST['btnupdate'])){
+        $oldpassword_text  = $_POST['txt_oldpassword'];
+        $newdpassword_text = $_POST['txt_newpassword'];
+        $rnewpassword_text = $_POST['txt_rnewpassword'];
+
+        echo $oldpassword_text." ".$newdpassword_text." ".$rnewpassword_text;
+    }
+    // Langkah 2 : ambil data dari db menggunakan select query
+    // Langkah 3 : bandingkan data langkah 1 dan langkah 2
+    // Langkah 4 : jika kedua data sama, lakukan update query
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,20 +39,15 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <!-- <h1 class="m-0">Change password</h1> -->
                     </div>
-                    <!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item active">Admin Dashboard</li>
                         </ol>
                     </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
             </div>
-            <!-- /.container-fluid -->
         </div>
         <!--|||||||||||||||| CONTENT HEADER ||||||||||||||||-->
 
@@ -58,7 +66,7 @@
                                 <h3 class="card-title">Change password</h3>
                             </div>
 
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" action="" method="post">
                                 <div class="card-body">
                                     <!-- Old password -->
                                     <div class="form-group">
@@ -67,7 +75,8 @@
                                             type="password" 
                                             class="form-control" 
                                             id="exampleInputPassword1" 
-                                            placeholder="Old password">
+                                            placeholder="Old password"
+                                            name="txt_oldpassword">
                                     </div>
                                     <!-- New password -->
                                     <div class="form-group">
@@ -76,7 +85,8 @@
                                             type="password" 
                                             class="form-control" 
                                             id="exampleInputPassword1" 
-                                            placeholder="New password">
+                                            placeholder="New password"
+                                            name="txt_newpassword">
                                     </div>
                                     <!-- Repeat new password -->
                                     <div class="form-group">
@@ -85,13 +95,17 @@
                                             type="password" 
                                             class="form-control" 
                                             id="exampleInputPassword1" 
-                                            placeholder="Repeat new password">
+                                            placeholder="Repeat new password"
+                                            name="txt_rnewpassword">
                                     </div>
                                 </div>
 
                                 <!-- Button -->
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-info float-right">Update password</button>
+                                    <button 
+                                        type="submit" 
+                                        class="btn btn-info float-right"
+                                        name="btnupdate">Update password</button>
                                 </div>
                             </form>
                         </div>       

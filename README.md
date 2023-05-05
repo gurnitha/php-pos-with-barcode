@@ -198,3 +198,18 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         new file:   ui/inc/others/footer.php
         new file:   ui/inc/others/head.php
         new file:   ui/inc/others/navbar.php
+
+
+#### 5.2 Langkah 1 : dapatkan input dari form menggunakan post method
+
+        NOTE:
+
+        Ada 4 langkah untuk merubah password
+
+        Langkah 1 : dapatkan input dari form menggunakan post method
+        Langkah 2 : ambil data dari db menggunakan select query
+        Langkah 3 : bandingkan data langkah 1 dan langkah 2
+        Langkah 4 : jika kedua data sama, lakukan update query
+
+        modified:   README.md
+        modified:   ui/changepassword.php
