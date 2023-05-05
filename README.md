@@ -108,3 +108,10 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         modified:   README.md
         modified:   ui/inc/user/content.php
         modified:   ui/inc/user/head.php
+
+
+#### 1.12 User login - part 7 (protect admin page menggunakan session) 
+
+        modified:   README.md
+        modified:   index.php
+        modified:   ui/admin.php

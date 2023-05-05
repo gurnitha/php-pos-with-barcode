@@ -22,6 +22,11 @@
             if($row['useremail'] == $useremail and $row['userpassword'] == $password and $row['role'] == "admin") {
                 echo $success="<span style='color:#0FAD83;'>Admin sukses login!</span>";
                 header('refresh: 1;ui/admin.php');
+
+                $_SESSION['userid'] = $row['userid'];
+                $_SESSION['username'] = $row['username'];
+                $_SESSION['useremail'] = $row['useremail'];
+                $_SESSION['role'] = $row['role'];
             } 
 
             elseif ($row['useremail'] == $useremail and $row['userpassword'] == $password and $row['role'] == "user") {
