@@ -7,3 +7,5 @@
 <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="../assets/plugins/sweetalert2/sweetalert2.min.css">

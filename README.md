@@ -215,7 +215,14 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         modified:   ui/changepassword.php
 
 
-#### 5.3 Langkah 2 : ambil data dari db menggunakan select query berdasarkan useremail
+#### 5.3 Langkah 2 : Part 1 - ambil data dari db menggunakan select query berdasarkan useremail
 
         modified:   README.md
         modified:   ui/changepassword.php
+
+
+#### 5.4 Langkah 2 : Part 2 - showing alert messages
+
+        modified:   README.md
+        modified:   ui/changepassword.php
+        modified:   ui/inc/others/head.php

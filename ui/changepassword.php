@@ -29,6 +29,10 @@
     // echo $row['username'];
     // // admin
 
+    // Showing alert messages
+    $_SESSION['status']="Ganti password berhasil!";
+    $_SESSION['status_code']="success";
+
     // Langkah 3 : bandingkan data langkah 1 dan langkah 2
     // Langkah 4 : jika kedua data sama, lakukan update query
 ?>
@@ -150,6 +154,23 @@
     <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../assets/dist/js/adminlte.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="../assets/plugins/sweetalert2/sweetalert2.min.js"></script>
 
+
+    <!-- Start alert messages -->
+    <?php if(isset($_SESSION['status']) && $_SESSION['status'] !=''){ ?>
+
+    <script>
+
+          Swal.fire({
+            icon: '<?php echo $_SESSION['status_code']; ?>',
+            title: '<?php echo $_SESSION['status']; ?>'
+          });
+
+    </script>
+
+    <?php unset($_SESSION['status']); } ?>
+    <!-- End alert messages -->
 </body>
 </html>
