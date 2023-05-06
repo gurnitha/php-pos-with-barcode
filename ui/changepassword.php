@@ -7,7 +7,7 @@
     // --------4 langkah untuk merubah password------------
 
     // Langkah 1 : dapatkan input dari form menggunakan post method
-    if(isset($_POST['btnupdate'])){
+    if (isset($_POST['btnupdate'])){
         $oldpassword_text  = $_POST['txt_oldpassword'];
         $newdpassword_text = $_POST['txt_newpassword'];
         $rnewpassword_text = $_POST['txt_rnewpassword'];
@@ -29,13 +29,57 @@
     // echo $row['username'];
     // // admin
 
+    $useremail_db = $row['useremail']; 
+    $password_db  = $row['userpassword'];
+
     // Showing alert messages
     $_SESSION['status']="Ganti password berhasil!";
     $_SESSION['status_code']="success";
 
     // Langkah 3 : bandingkan data langkah 1 dan langkah 2
-    // Langkah 4 : jika kedua data sama, lakukan update query
+
+    // 1. Memastikan password lama sama dengan password baru
+    if ($oldpassword_text == $password_db){
+
+        // 2. Memastikan password baru sama dengan repeat password baru
+        if ($newdpassword_text == $rnewpassword_text){
+
+            // 3. Lakukan update password berdasarkan emailnya yg ada di db
+            // Note: (:pass) dan (:email) dinamai place holder untuk password dan email
+            $update = $pdo->prepare("UPDATE tbl_user SET userpassword = :pass WHERE useremail = :email");
+
+            // Note: :pass is equal to the old password and $rnewpassword_text is the new one
+            $update->bindParam(':pass', $rnewpassword_text);
+            $update->bindParam(':email', $email);
+
+            // Langkah 4 : jika kedua data sama, lakukan update query dan berikan pesan update gagal atau berhasil
+            if ($update->execute()) {
+                
+                $_SESSION['status'] = 'Password berhasil diupdate!';
+                $_SESSION['status_code'] = 'success';
+
+            } else {
+
+                $_SESSION['status'] = 'Password gagal berhasil diupdate!';
+                $_SESSION['status_code'] = 'error';
+
+            }
+        } else {
+
+            $_SESSION['status'] = "New password did not match!";
+            $_SESSION['status_code'] = "error";
+        }
+
+    } else {
+
+        $_SESSION['status'] = "Password did not match!";
+        $_SESSION['status_code'] = "error";
+
+    } 
+
+    
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

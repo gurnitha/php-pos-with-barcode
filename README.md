@@ -226,3 +226,24 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         modified:   README.md
         modified:   ui/changepassword.php
         modified:   ui/inc/others/head.php
+
+
+#### 5.5 Langkah 3 & 4 : bandingkan data langkah 1 dan langkah 2 dan jika sama, lakukan update
+
+        modified:   README.md
+        modified:   ui/changepassword.php
+
+        NOTE:
+
+        Steps untuk meng-update password:
+
+        1. User harus login terlebih dahulu menggunakan kredensialnya.
+        2. Setelah berhasil logged in, maka emailnya akan ditangkap oleh session.
+        3. Saat melakukan update password, sistem akan memastikan:
+        3.1 Password lamanya benar.
+        3.2 New password dan Repeat new password adalah sama.
+        3.3 Saat akan dilakukan update, maka update dilakukan terhadap user yang emailnya
+            sudah tersimpan di dalam db (untuk memastikan bahwa user dengan email
+            ttt melakukan update passwordnya).
+        4. Jika gagal step 3.1, 3.2 dan 3.3, maka sistem akan memberikan
+           peringatan bahwa update tdk berhasil.
