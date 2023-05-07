@@ -305,3 +305,6 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         modified:   README.md
         modified:   ui/inc/admin/aside_main.php
+
+
+## 6. Membuat form registrasi
