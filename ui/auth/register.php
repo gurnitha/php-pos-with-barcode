@@ -24,15 +24,22 @@
 
         if ($insert->execute()){
 
-            echo "Berhasil membuat user baru!";
+            // echo "Berhasil membuat user baru!";
+            $_SESSION['status'] = 'Berhasil membuat user baru!';
+            $_SESSION['status_code'] = 'success';
 
         } else {
 
-            echo "Gagal membuat user baru!";
+            // echo "Gagal membuat user baru!";
+            $_SESSION['status']="Gagal membuat user baru!";
+            $_SESSION['status_code']="error";  
         }
 
     } else {
         echo "Gagal membuat user!";
+        // echo "Gagal membuat user baru!";
+        $_SESSION['status']="Gagal membuat user baru!";
+        $_SESSION['status_code']="error"; 
     }
 ?>
 
@@ -70,6 +77,21 @@
 
     <!--||||||||||||||||||| scripts ||||||||||||||||||-->
     <?php require('../partials/scripts.php'); ?>
+
+    <!-- Start alert messages -->
+    <?php if(isset($_SESSION['status']) && $_SESSION['status'] !=''){ ?>
+
+    <script>
+
+          Swal.fire({
+            icon: '<?php echo $_SESSION['status_code']; ?>',
+            title: '<?php echo $_SESSION['status']; ?>'
+          });
+
+    </script>
+
+    <?php unset($_SESSION['status']); } ?>
+    <!-- End alert messages -->
 
 </body>
 </html>

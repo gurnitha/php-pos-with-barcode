@@ -376,4 +376,11 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         NEXT:
 
-        Mencegah pengulangan user dengan kredensial yang sama dibuat lagi.
+        1. Menampilkan alret message.
+        2. Mencegah pengulangan user dengan kredensial yang sama dibuat lagi.
+
+
+### 6.6 Menampilkan alret message
+
+        modified:   README.md
+        modified:   ui/auth/register.php
