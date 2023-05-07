@@ -41,7 +41,8 @@
                                         class="form-control" 
                                         id="exampleInputEmail1" 
                                         placeholder="Enter name"
-                                        name="txtname">
+                                        name="txtname"
+                                        required>
                                 </div>
 
                                 <!-- Email -->
@@ -52,7 +53,8 @@
                                         class="form-control" 
                                         id="exampleInputEmail1" 
                                         placeholder="Enter email"
-                                        name="txtemail">
+                                        name="txtemail"
+                                        required>
                                 </div>
 
                                 <!-- Password -->
@@ -63,7 +65,8 @@
                                         class="form-control" 
                                         id="exampleInputPassword1" 
                                         placeholder="Password"
-                                        name="txtpassword">
+                                        name="txtpassword"
+                                        required>
                                 </div>
 
                                 <!-- Role -->
@@ -71,7 +74,8 @@
                                     <label>Role</label>
                                     <select 
                                         class="form-control" 
-                                        name="txtselect_option">
+                                        name="txtselect_option"
+                                        required>
                                         <option value="" disabled selected>Pilih role</option>
                                         <option>Admin</option>
                                         <option>User</option>

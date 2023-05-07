@@ -404,3 +404,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
            atribut 'reguired'
 
         4. Mencegah form register bekerja bila form field kosong.
+
+
+#### 6.8 Mencegah form register bekerja bila form field kosong
+
+        modified:   README.md
+        modified:   ui/auth/inc/form_register.php
