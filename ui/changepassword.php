@@ -100,7 +100,13 @@
     <!--||||||||||||||||||| navbar |||||||||||||||||||-->
 
     <!--||||||||||||||||| aside_main |||||||||||||||||-->
-    <?php require('inc/others/aside_main.php'); ?>
+    <?php 
+        if ($_SESSION['role'] == 'admin'){
+            require('inc/admin/aside_main.php'); 
+        } else {
+            require('inc/user/aside_main.php');  
+        }
+    ?>
     <!--||||||||||||||||| aside_main |||||||||||||||||-->
 
     <!--||||||||||||||||||| content |||||||||||||||||||-->
@@ -192,7 +198,13 @@
     <!--||||||||||||||||||| content |||||||||||||||||||-->
 
     <!--||||||||||||||||| aside_control ||||||||||||||-->
-    <?php require('inc/others/aside_control.php'); ?>
+    <?php 
+        if ($_SESSION['role'] == 'admin'){
+            require('inc/admin/aside_control.php'); 
+        } else {
+            require('inc/user/aside_control.php');  
+        }
+    ?>
     <!--||||||||||||||||| aside_control ||||||||||||||-->
 
     <!--||||||||||||||||||| footer |||||||||||||||||||-->

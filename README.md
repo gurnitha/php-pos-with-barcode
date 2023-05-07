@@ -281,3 +281,13 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         Fixing this issue to show the respective aside bar when
         use/admin logged in and want to access the changepassword page
+
+
+#### 5.8 Fixing the above issues by modifying the changepassword page
+
+        modified:   README.md
+        modified:   ui/changepassword.php
+
+        NOTE:
+
+        Issues fixed
