@@ -12,32 +12,51 @@
         $userpassword   = $_POST['txtpassword'];
         $userrole       = $_POST['txtselect_option'];
 
-        $insert = $pdo->prepare("
-            INSERT INTO tbl_user
-            (username, useremail, userpassword, role)
-            VALUES(:name, :email, :password, :role)");
+        // Cek apakah email yang sama sdh ada atau tidak di dalam db
+        if (isset($_POST['txtemail'])){
 
-        $insert->bindParam(':name', $username);
-        $insert->bindParam(':email', $useremail);
-        $insert->bindParam(':password', $userpassword);
-        $insert->bindParam(':role', $userrole);
+            $select = $pdo->prepare("
+                SELECT useremail
+                FROM tbl_user
+                WHERE useremail = '$useremail'");
 
-        if ($insert->execute()){
+            $select->execute();
 
-            // echo "Berhasil membuat user baru!";
-            $_SESSION['status'] = 'Berhasil membuat user baru!';
-            $_SESSION['status_code'] = 'success';
+            if ($select->rowCount() > 0 ){
 
-        } else {
+                $_SESSION['status']="Email sudah digunakan ..Gunakan email lain!";
+                $_SESSION['status_code']="warning";  
+            }
 
-            // echo "Gagal membuat user baru!";
-            $_SESSION['status']="Gagal membuat user baru!";
-            $_SESSION['status_code']="error";  
-        }
+            // Jika email belum ada di dalam db, lanjutkan buat user baru
+            else {
+
+                $insert = $pdo->prepare("
+                    INSERT INTO tbl_user
+                    (username, useremail, userpassword, role)
+                    VALUES(:name, :email, :password, :role)");
+
+                $insert->bindParam(':name', $username);
+                $insert->bindParam(':email', $useremail);
+                $insert->bindParam(':password', $userpassword);
+                $insert->bindParam(':role', $userrole);
+
+                if ($insert->execute()){
+
+                    $_SESSION['status'] = 'Berhasil membuat user baru!';
+                    $_SESSION['status_code'] = 'success';
+
+                } else {
+
+                    $_SESSION['status']="Gagal membuat user baru!";
+                    $_SESSION['status_code']="error";  
+                }
+            }
+
+        } 
 
     } else {
-        echo "Gagal membuat user!";
-        // echo "Gagal membuat user baru!";
+
         $_SESSION['status']="Gagal membuat user baru!";
         $_SESSION['status_code']="error"; 
     }

@@ -350,19 +350,19 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         new file:   ui/auth/register.php
 
 
-### 6.3 Display data users from db
+#### 6.3 Display data users from db
 
         modified:   README.md
         modified:   ui/auth/inc/form_register.php
 
 
-### 6.4 Disabled option field 'Pilih role' dari kemungkinan di-select 
+#### 6.4 Disabled option field 'Pilih role' dari kemungkinan di-select 
 
         modified:   README.md
         modified:   ui/auth/inc/form_register.php
 
 
-### 6.5 Membuat user baru
+#### 6.5 Membuat user baru
 
         modified:   README.md
         modified:   ui/auth/inc/form_register.php
@@ -371,16 +371,36 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         NOTE:
 
         1. Berhasil membuat user baru.
-        2. Namun sistem belum bisa mendeteksi kalau user dengan 
-           kredensial yang sama sudah ada di dalam db.
+        2. Namun sistem belum bisa mencegah SINGLE EMAIL membuat 
+           multiple akun.
 
         NEXT:
 
         1. Menampilkan alret message.
-        2. Mencegah pengulangan user dengan kredensial yang sama dibuat lagi.
+        2. Mencegah SINGLE EMAIL membuat multiple akun.
 
 
-### 6.6 Menampilkan alret message
+#### 6.6 Menampilkan alret message
 
         modified:   README.md
         modified:   ui/auth/register.php
+
+
+#### 6.7 Mencegah SINGLE EMAIL membuat multiple akun
+
+        modified:   README.md
+        modified:   ui/auth/register.php
+
+        NOTE:
+
+        1. Berhasil Mencegah SINGLE EMAIL membuat multiple akun
+
+        2. Namun, jika form register dalam keadaan kosong diklik,
+           muncul peringatan sbb: 
+           'Warning: Undefined array key "txtselect_option" 
+           in E:\workspace\laragon\www\php-pos-with-barcode\ui\auth\register.php on line 13'
+
+        3. Hal itu, bisa jadi karena form field tidak berisi
+           atribut 'reguired'
+
+        4. Mencegah form register bekerja bila form field kosong.
