@@ -4,7 +4,25 @@
     include_once '../config/connectdb.php';
     session_start();
 
-    // ===============DELETE USER================
+
+    // =============LET ADMIN ONLY ACCESS REGISTER PAGE=============
+    if ($_SESSION['useremail'] == "" OR $_SESSION['role'] == 'user'){
+
+        header('location: ../../index.php');
+    }
+
+    if ($_SESSION['role'] == 'admin'){
+
+        include_once "register.php";
+
+    } else {
+        include_once "register.php";
+    }
+
+    // ===========END LET ADMIN ONLY ACCESS REGISTER PAGE===========
+
+
+    // =========================DELETE USER=========================
 
     // Mencegah peringatan bila pd url tdk ada id
     error_reporting(0);
@@ -31,11 +49,10 @@
         }
     }
 
-    // ===============END DELETE USER================
+    // ======================END DELETE USER=======================
 
 
-
-    // ===================CREATE USER=================
+    // ==========================CREATE USER=======================
     if (isset($_POST['btnsave'])){
 
         $username       = $_POST['txtname'];
@@ -93,13 +110,14 @@
     // 2. Saat menghapus akun, it also pops up and prevent
     //    "Akun berhasil dihapus!"; pops up
     // 3. Setelah di-nonaktifkan, semua berjalan normal
-    
+
     // else {
 
     //     $_SESSION['status']="Gagal membuat user baru! xx";
     //     $_SESSION['status_code']="error"; 
     // }
-    // ==================END CREATE USER=============
+
+    // =========================END CREATE USER====================
 
 ?>
 

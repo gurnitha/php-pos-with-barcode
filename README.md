@@ -418,3 +418,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         modified:   ui/admin/inc/aside_main.php
         modified:   ui/auth/inc/form_register.php
         modified:   ui/auth/register.php
+
+
+#### 6.10 Membuat hanya user sebagai admin yang diijinkan meng-akses laman register
+
+        modified:   README.md
+        modified:   ui/auth/register.php
