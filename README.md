@@ -308,3 +308,35 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
 
 ## 6. Membuat form registrasi
+
+
+#### 6.1 Merubah struktur files
+
+        modified:   README.md
+        renamed:    ui/blank.php -> blank.php
+        modified:   index.php
+        renamed:    ui/admin.php -> ui/admin/dashboard.php
+        renamed:    ui/inc/admin/aside_control.php -> ui/admin/inc/aside_control.php
+        renamed:    ui/inc/admin/aside_main.php -> ui/admin/inc/aside_main.php
+        renamed:    ui/inc/admin/content.php -> ui/admin/inc/content.php
+        renamed:    ui/inc/admin/navbar.php -> ui/admin/inc/navbar.php
+        renamed:    ui/changepassword.php -> ui/auth/changepassword.php
+        renamed:    ui/inc/others/aside_control.php -> ui/auth/inc/aside_control.php
+        renamed:    ui/inc/others/aside_main.php -> ui/auth/inc/aside_main.php
+        renamed:    ui/inc/others/content.php -> ui/auth/inc/content.php
+        renamed:    ui/inc/others/navbar.php -> ui/auth/inc/navbar.php
+        new file:   ui/auth/inc/register.php
+        renamed:    ui/logout.php -> ui/auth/logout.php
+        deleted:    ui/inc/admin/footer.php
+        deleted:    ui/inc/admin/head.php
+        deleted:    ui/inc/others/head.php
+        deleted:    ui/inc/user/footer.php
+        deleted:    ui/inc/user/head.php
+        renamed:    ui/inc/others/footer.php -> ui/partials/footer.php
+        new file:   ui/partials/head.php
+        new file:   ui/partials/scripts.php
+        renamed:    ui/user.php -> ui/user/dashboard.php
+        renamed:    ui/inc/user/aside_control.php -> ui/user/inc/aside_control.php
+        renamed:    ui/inc/user/aside_main.php -> ui/user/inc/aside_main.php
+        renamed:    ui/inc/user/content.php -> ui/user/inc/content.php
+        renamed:    ui/inc/user/navbar.php -> ui/user/inc/navbar.php

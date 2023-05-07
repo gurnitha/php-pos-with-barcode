@@ -1,7 +1,7 @@
 <!-- ui/changepassword.php -->
 <?php 
     // Connecting the db and start session
-    include_once 'config/connectdb.php';
+    include_once '../config/connectdb.php';
     session_start();
 
     // Redirect unlogged in user to login page
@@ -91,20 +91,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require('inc/others/head.php'); ?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>POS | Change Password</title>
+
+    <!--|||||||||||||| head ||||||||||||||-->
+    <?php require('../partials/head.php'); ?>
+    <!--|||||||||||||| head ||||||||||||||-->
 </head>
 <body class="hold-transition sidebar-mini">
 
     <!--||||||||||||||||||| navbar |||||||||||||||||||-->
-    <?php require('inc/others/navbar.php'); ?>
+    <?php require('inc/navbar.php'); ?>
     <!--||||||||||||||||||| navbar |||||||||||||||||||-->
 
     <!--||||||||||||||||| aside_main |||||||||||||||||-->
     <?php 
         if ($_SESSION['role'] == 'admin'){
-            require('inc/admin/aside_main.php'); 
+            require('../admin/inc/aside_main.php'); 
         } else {
-            require('inc/user/aside_main.php');  
+            require('../user/inc/aside_main.php');  
         }
     ?>
     <!--||||||||||||||||| aside_main |||||||||||||||||-->
@@ -200,27 +206,18 @@
     <!--||||||||||||||||| aside_control ||||||||||||||-->
     <?php 
         if ($_SESSION['role'] == 'admin'){
-            require('inc/admin/aside_control.php'); 
+            require('../admin/inc/aside_control.php'); 
         } else {
-            require('inc/user/aside_control.php');  
+            require('../user/incaside_control.php');  
         }
     ?>
     <!--||||||||||||||||| aside_control ||||||||||||||-->
 
     <!--||||||||||||||||||| footer |||||||||||||||||||-->
-    <?php require('inc/others/footer.php'); ?>
+    <?php require('../partials/footer.php'); ?>
 
-    <!-- ./wrapper -->
-    <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="../assets/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../assets/dist/js/adminlte.min.js"></script>
-    <!-- SweetAlert2 -->
-    <script src="../assets/plugins/sweetalert2/sweetalert2.min.js"></script>
-
+    <!--||||||||||||||||||| scripts ||||||||||||||||||-->
+    <?php require('../partials/scripts.php'); ?>
 
     <!-- Start alert messages -->
     <?php if(isset($_SESSION['status']) && $_SESSION['status'] !=''){ ?>
