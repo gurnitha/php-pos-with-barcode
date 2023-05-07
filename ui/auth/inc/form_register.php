@@ -105,6 +105,8 @@
                             <td>Email</td>
                             <td>Password</td>
                             <td>Role</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
                         </thead>
                         <tbody>
                             <?php  
@@ -122,6 +124,11 @@
                                         <td>'.$row->useremail.'</td>
                                         <td>'.$row->userpassword.'</td>
                                         <td>'.$row->role.'</td>
+                                        <td></td>
+                                        <td>
+                                            <a href="../auth/register.php?id='.$row->userid.'" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
+                                        </td>
+
                                     </tr>';
                                 }
                             ?>

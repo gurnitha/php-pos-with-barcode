@@ -4,7 +4,38 @@
     include_once '../config/connectdb.php';
     session_start();
 
-    // Create user records
+    // ===============DELETE USER================
+
+    // Mencegah peringatan bila pd url tdk ada id
+    error_reporting(0);
+
+    // Jika icon delete diklik, get the id from the url untuk menghapus record
+    $id = $_GET['id'];
+
+    if (isset($id)){
+
+        $delete = $pdo->prepare("
+            DELETE 
+            FROM tbl_user
+            WHERE userid =".$id);
+
+        if ($delete->execute()){
+
+            $_SESSION['status']="Akun berhasil dihapus!";
+            $_SESSION['status_code']="success";  
+
+        } else {
+
+            $_SESSION['status']="Akun gagal dihapus!";
+            $_SESSION['status_code']="warning";  
+        }
+    }
+
+    // ===============END DELETE USER================
+
+
+
+    // ===================CREATE USER=================
     if (isset($_POST['btnsave'])){
 
         $username       = $_POST['txtname'];
@@ -55,11 +86,21 @@
 
         } 
 
-    } else {
+    } 
 
-        $_SESSION['status']="Gagal membuat user baru!";
-        $_SESSION['status_code']="error"; 
-    }
+    // NOTE: else ini di-nonaktifkan krn:
+    // 1. Saat menu register diklik, it pops up
+    // 2. Saat menghapus akun, it also pops up and prevent
+    //    "Akun berhasil dihapus!"; pops up
+    // 3. Setelah di-nonaktifkan, semua berjalan normal
+    
+    // else {
+
+    //     $_SESSION['status']="Gagal membuat user baru! xx";
+    //     $_SESSION['status_code']="error"; 
+    // }
+    // ==================END CREATE USER=============
+
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +121,7 @@
     <!--||||||||||||||||||| navbar |||||||||||||||||||-->
 
     <!--||||||||||||||||| aside_main |||||||||||||||||-->
-    <?php require('inc/aside_main.php'); ?>
+    <?php require('../admin/inc/aside_main.php'); ?>
     <!--||||||||||||||||| aside_main |||||||||||||||||-->
 
     <!--||||||||||||||||||| content |||||||||||||||||||-->

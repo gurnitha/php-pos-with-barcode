@@ -410,3 +410,11 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         modified:   README.md
         modified:   ui/auth/inc/form_register.php
+
+
+#### 6.9 DELELE a user 
+
+        modified:   README.md
+        modified:   ui/admin/inc/aside_main.php
+        modified:   ui/auth/inc/form_register.php
+        modified:   ui/auth/register.php

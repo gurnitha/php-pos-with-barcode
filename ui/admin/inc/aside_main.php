@@ -100,7 +100,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="../../ui/auth/register.php" class="nav-link">
                         <i class="nav-icon fas fa-plus-square"></i>
                         <p>
                             Registrasi
