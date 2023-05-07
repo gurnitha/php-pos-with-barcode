@@ -291,3 +291,11 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         NOTE:
 
         Issues fixed
+
+
+#### 5.9 Memodifikasi footer ttg copy right
+
+        modified:   README.md
+        modified:   ui/inc/admin/footer.php
+        modified:   ui/inc/others/footer.php
+        modified:   ui/inc/user/footer.php
