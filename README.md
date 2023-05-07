@@ -263,3 +263,21 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         2. Unlogged in user can not access admin and user page
         3. Logged in admin can not access user page
         4. Logged in user can not access admin page
+
+
+#### 5.7 Memodifikasi aside nav pada user dan admin dashboard
+
+        modified:   README.md
+        modified:   ui/inc/admin/aside_main.php
+        modified:   ui/inc/user/aside_main.php
+
+        NOTE:
+
+        1. A logged in user/admin, when it access the changepassword page,
+           the changepassword page shows its own aside bar (now the
+           aside bar of the user or admin.
+        
+        NEXT:
+
+        Fixing this issue to show the respective aside bar when
+        use/admin logged in and want to access the changepassword page

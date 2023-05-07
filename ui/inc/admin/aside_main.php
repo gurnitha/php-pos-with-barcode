@@ -38,7 +38,6 @@
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                            Dashboard
-                            <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
                 </li>
@@ -49,7 +48,6 @@
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Category
-                            <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
                 </li>
@@ -60,7 +58,6 @@
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Registration
-                            <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
                 </li>
@@ -71,7 +68,7 @@
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Logout
-                            <span class="right badge badge-danger">New</span>
+                            <span class="right badge badge-danger">Admin</span>
                         </p>
                     </a>
                 </li>
