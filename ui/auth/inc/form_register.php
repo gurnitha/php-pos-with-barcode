@@ -30,7 +30,7 @@
                         <div class="card-header">
                             <h5 class="m-0">Register</h5>
                         </div>
-                        <form>
+                        <form action="" method="POST">
                             <div class="card-body">
 
                                 <!-- Name -->
@@ -40,7 +40,8 @@
                                         type="text" 
                                         class="form-control" 
                                         id="exampleInputEmail1" 
-                                        placeholder="Enter name">
+                                        placeholder="Enter name"
+                                        name="txtname">
                                 </div>
 
                                 <!-- Email -->
@@ -50,7 +51,8 @@
                                         type="email" 
                                         class="form-control" 
                                         id="exampleInputEmail1" 
-                                        placeholder="Enter email">
+                                        placeholder="Enter email"
+                                        name="txtemail">
                                 </div>
 
                                 <!-- Password -->
@@ -60,13 +62,16 @@
                                         type="password" 
                                         class="form-control" 
                                         id="exampleInputPassword1" 
-                                        placeholder="Password">
+                                        placeholder="Password"
+                                        name="txtpassword">
                                 </div>
 
                                 <!-- Role -->
                                 <div class="form-group">
                                     <label>Role</label>
-                                    <select class="form-control" name="txtselect_opetion">
+                                    <select 
+                                        class="form-control" 
+                                        name="txtselect_option">
                                         <option value="" disabled selected>Pilih role</option>
                                         <option>Admin</option>
                                         <option>User</option>
@@ -77,7 +82,10 @@
 
                             <!-- Save button -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary float-right">Save</button>
+                                <button 
+                                    type="submit" 
+                                    class="btn btn-primary float-right"
+                                    name="btnsave">Save</button>
                             </div>
                         </form>
                     </div>                

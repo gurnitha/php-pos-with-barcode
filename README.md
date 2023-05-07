@@ -360,3 +360,20 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         modified:   README.md
         modified:   ui/auth/inc/form_register.php
+
+
+### 6.5 Membuat user baru
+
+        modified:   README.md
+        modified:   ui/auth/inc/form_register.php
+        modified:   ui/auth/register.php
+
+        NOTE:
+
+        1. Berhasil membuat user baru.
+        2. Namun sistem belum bisa mendeteksi kalau user dengan 
+           kredensial yang sama sudah ada di dalam db.
+
+        NEXT:
+
+        Mencegah pengulangan user dengan kredensial yang sama dibuat lagi.
