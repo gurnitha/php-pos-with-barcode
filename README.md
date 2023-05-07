@@ -247,3 +247,19 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
             ttt melakukan update passwordnya).
         4. Jika gagal step 3.1, 3.2 dan 3.3, maka sistem akan memberikan
            peringatan bahwa update tdk berhasil.
+
+
+#### 5.6 Membetulkan error pada langkah 3 dan 4 serta protecting user.php dan admin.php dari unlogged in user
+
+        modified:   README.md
+        modified:   ui/admin.php
+        modified:   ui/changepassword.php
+        modified:   ui/inc/others/aside_main.php
+        modified:   ui/user.php
+
+        NOTE:
+
+        1. Error fixed
+        2. Unlogged in user can not access admin and user page
+        3. Logged in admin can not access user page
+        4. Logged in user can not access admin page

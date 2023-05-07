@@ -5,7 +5,7 @@
     session_start();
 
     // Redirect user if useremail is empty
-    if($_SESSION['useremail'] == ""){
+    if($_SESSION['useremail'] == "" OR $_SESSION['role'] == "admin"){
         header('location:../index.php');
     }
 ?>

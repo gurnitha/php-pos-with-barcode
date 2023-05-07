@@ -4,80 +4,88 @@
     include_once 'config/connectdb.php';
     session_start();
 
+    // Redirect unlogged in user to login page
+    if($_SESSION['useremail'] == ""){
+        header('location:../index.php');
+    }
+
     // --------4 langkah untuk merubah password------------
 
     // Langkah 1 : dapatkan input dari form menggunakan post method
     if (isset($_POST['btnupdate'])){
+        
         $oldpassword_text  = $_POST['txt_oldpassword'];
         $newdpassword_text = $_POST['txt_newpassword'];
         $rnewpassword_text = $_POST['txt_rnewpassword'];
 
         // Testing
         // echo $oldpassword_text." ".$newdpassword_text." ".$rnewpassword_text;
-    }
+    
+        // Langkah 2 : ambil data dari db menggunakan select query berdasarkan useremail
+        
+        // Catch the useremail using SESSION and put it in var email
+        // Session had been started above in line 5
+        $email = $_SESSION['useremail'];
 
-    // Langkah 2 : ambil data dari db menggunakan select query berdasarkan useremail
-    $email = $_SESSION['useremail'];
+        // Get out the user email from the tbl_user base on the session
+        $select = $pdo->prepare("SELECT * FROM tbl_user WHERE useremail = '$email'");
+        $select->execute();
+        $row = $select->fetch(PDO::FETCH_ASSOC);
 
-    $select = $pdo->prepare("SELECT * FROM tbl_user WHERE useremail = '$email'");
-    $select->execute();
-    $row = $select->fetch(PDO::FETCH_ASSOC);
+        // Check the value
+        // echo $row['useremail']; 
+        // echo $row['userpassword'];
 
-    // // Testing: user MUST logged in
-    // echo $row['useremail']; 
-    // // admin@admin.com
-    // echo $row['username'];
-    // // admin
+        $useremail_db = $row['useremail']; 
+        $password_db  = $row['userpassword'];
 
-    $useremail_db = $row['useremail']; 
-    $password_db  = $row['userpassword'];
+        // Langkah 3 Compare user input values to the database values
+        // 1. Memastikan password user sama: yg ditulis dg passwordnya di db
+        if ($oldpassword_text == $password_db){
 
-    // Showing alert messages
-    $_SESSION['status']="Ganti password berhasil!";
-    $_SESSION['status_code']="success";
+            // 2. Memastikan password baru sama dengan repeat password baru
+            if ($newdpassword_text == $rnewpassword_text){
 
-    // Langkah 3 : bandingkan data langkah 1 dan langkah 2
+                // Langkah 4 : jika kedua data sama, lakukan update query dan berikan pesan update gagal atau berhasil
+                // Note: (:pass) dan (:email) dinamai place holder untuk password dan email
+                $update = $pdo->prepare("
+                    UPDATE tbl_user 
+                    SET userpassword = :pass 
+                    WHERE useremail = :email");
 
-    // 1. Memastikan password lama sama dengan password baru
-    if ($oldpassword_text == $password_db){
+                // Note: :pass is equal to the old password and $rnewpassword_text is the new one
+                $update->bindParam(':pass', $rnewpassword_text);
+                $update->bindParam(':email', $email);
 
-        // 2. Memastikan password baru sama dengan repeat password baru
-        if ($newdpassword_text == $rnewpassword_text){
+                // Execute the udate and show the alert message
+                if ($update->execute()) {
 
-            // 3. Lakukan update password berdasarkan emailnya yg ada di db
-            // Note: (:pass) dan (:email) dinamai place holder untuk password dan email
-            $update = $pdo->prepare("UPDATE tbl_user SET userpassword = :pass WHERE useremail = :email");
+                    $_SESSION['status'] = 'Password updated successfully!';
+                    $_SESSION['status_code'] = 'success';
 
-            // Note: :pass is equal to the old password and $rnewpassword_text is the new one
-            $update->bindParam(':pass', $rnewpassword_text);
-            $update->bindParam(':email', $email);
+                } 
 
-            // Langkah 4 : jika kedua data sama, lakukan update query dan berikan pesan update gagal atau berhasil
-            if ($update->execute()) {
-                
-                $_SESSION['status'] = 'Password berhasil diupdate!';
-                $_SESSION['status_code'] = 'success';
+            } 
+            
+            // If new and repeat password did not match, show alert messages
+            else {
 
-            } else {
-
-                $_SESSION['status'] = 'Password gagal berhasil diupdate!';
-                $_SESSION['status_code'] = 'error';
-
+                $_SESSION['status']="New password and repeat new password did not match!";
+                $_SESSION['status_code']="error";     
             }
-        } else {
 
-            $_SESSION['status'] = "New password did not match!";
-            $_SESSION['status_code'] = "error";
+        } 
+
+        // If password from the form and the passord in the db did not match
+        // show the alert message
+        else {
+
+            $_SESSION['status']="Password did not match!";
+            $_SESSION['status_code']="error";
         }
 
-    } else {
+    }
 
-        $_SESSION['status'] = "Password did not match!";
-        $_SESSION['status_code'] = "error";
-
-    } 
-
-    
 ?>
 
 <!DOCTYPE html>

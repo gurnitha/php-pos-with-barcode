@@ -12,7 +12,7 @@
                 <img src="../assets/dist/img/admin/ing.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">User name</a>
+                <a href="#" class="d-block"><?php echo ucfirst($_SESSION['username']); ?></a>
             </div>
         </div>
         <!-- SidebarSearch Form -->
