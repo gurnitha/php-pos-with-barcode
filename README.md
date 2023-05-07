@@ -299,3 +299,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         modified:   ui/inc/admin/footer.php
         modified:   ui/inc/others/footer.php
         modified:   ui/inc/user/footer.php
+
+
+#### 5.10 Change icons pada admin page
+
+        modified:   README.md
+        modified:   ui/inc/admin/aside_main.php

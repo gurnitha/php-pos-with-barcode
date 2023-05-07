@@ -12,7 +12,11 @@
                 <img src="../assets/dist/img/admin/ing.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"><?php echo ucfirst($_SESSION['username']); ?></a>
+                <a href="#" class="d-block">
+                    <span class="right badge badge-danger">
+                        <?php echo ucfirst($_SESSION['username']); ?>
+                    </span>
+                </a>
             </div>
         </div>
         <!-- SidebarSearch Form -->
@@ -32,43 +36,92 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
 
-                <!-- Dashboard -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                           Dashboard
+                            Dhashboard
                         </p>
                     </a>
                 </li>
 
-                <!-- Category -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-table"></i>
                         <p>
-                            Category
+                            Categori
                         </p>
                     </a>
                 </li>
 
-                <!-- Registration -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Registration
+                            Produk
                         </p>
                     </a>
                 </li>
 
-                <!-- Logout -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            POS
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            Daftar order
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Laporan penjualan
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-calculator"></i>
+                        <p>
+                            Pajak
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-plus-square"></i>
+                        <p>
+                            Registrasi
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../ui/changepassword.php" class="nav-link">
+                        <i class="nav-icon fas fa-user-lock"></i>
+                        <p>
+                            Rubah password
+                        </p>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a href="../../ui/logout.php" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>
                             Logout
-                            <span class="right badge badge-danger">Admin</span>
                         </p>
                     </a>
                 </li>
