@@ -354,3 +354,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
 
         modified:   README.md
         modified:   ui/auth/inc/form_register.php
+
+
+### 6.4 Disabled option field 'Pilih role' dari kemungkinan di-select 
+
+        modified:   README.md
+        modified:   ui/auth/inc/form_register.php

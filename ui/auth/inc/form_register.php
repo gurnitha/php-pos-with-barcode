@@ -66,8 +66,8 @@
                                 <!-- Role -->
                                 <div class="form-group">
                                     <label>Role</label>
-                                    <select class="form-control">
-                                        <option>Pilih</option>
+                                    <select class="form-control" name="txtselect_opetion">
+                                        <option value="" disabled selected>Pilih role</option>
                                         <option>Admin</option>
                                         <option>User</option>
                                     </select>
@@ -75,9 +75,9 @@
 
                             </div>
 
-                            <!-- Submit -->
+                            <!-- Save button -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary float-right">Submit</button>
+                                <button type="submit" class="btn btn-primary float-right">Save</button>
                             </div>
                         </form>
                     </div>                
@@ -117,7 +117,7 @@
                     </table>
                 </div>
                 <!--||||||||||||||| TABLE ||||||||||||||-->
-                
+
             </div>
         </div>
     </div>
