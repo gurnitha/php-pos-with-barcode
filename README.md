@@ -340,3 +340,11 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         renamed:    ui/inc/user/aside_main.php -> ui/user/inc/aside_main.php
         renamed:    ui/inc/user/content.php -> ui/user/inc/content.php
         renamed:    ui/inc/user/navbar.php -> ui/user/inc/navbar.php
+
+
+#### 6.2 Membuat laman register
+
+        modified:   README.md
+        modified:   index.php
+        new file:   ui/auth/inc/form_register.php
+        new file:   ui/auth/register.php

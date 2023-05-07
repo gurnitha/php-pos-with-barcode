@@ -133,6 +133,14 @@
                                 name="btn_login">Log in</button>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <a href="ui/auth/register.php">Register</a>
+                            </div>
+                        </div>
+                    </div>
                 </form>
                 <p class="mb-1">
                     
