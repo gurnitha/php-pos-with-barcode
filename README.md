@@ -348,3 +348,9 @@ Membuat POS with Barcode menggunakan PHP dan MySQL
         modified:   index.php
         new file:   ui/auth/inc/form_register.php
         new file:   ui/auth/register.php
+
+
+### 6.3 Display data users from db
+
+        modified:   README.md
+        modified:   ui/auth/inc/form_register.php
